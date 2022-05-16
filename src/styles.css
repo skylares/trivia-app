@@ -5,9 +5,11 @@
 html, body {
   min-height: 100%;
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
 }
 
-h1, h2, h3, p, button {
+h1, h2, h3, p, button, form {
   margin: 0;
   padding: 0;
 } 
@@ -17,4 +19,84 @@ body {
     url(./images/yellow-blob.png) top right no-repeat,
     url(./images/big-blue-blob.png) bottom left no-repeat,
     #F5F7FB;
+  color:#293264;
+}
+
+button {
+  color: #F5F7FB;
+  background-color: #4D5B9E;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 15px;
+  border: none;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: inset 0px 0px 5px #0e1435;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+  /* Start */
+
+.start--title {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.start--description {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 20px 0;
+}
+
+form {
+  margin: 30px 10px;
+}
+
+select {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  min-width: 170px;
+  width: 50%;
+  padding: 5px 0 5px 10px;
+  border-radius: 12px;
+  background-color: #D6DBF5;
+  margin-left: 5px;
+}
+
+option {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.start--button {
+  margin-top: 10px;
+  padding: 15px 60px;
+  font-size: 1.25rem;
+}
+
+  /* Trivia */
+
+.trivia {
+  text-align: left;
 }

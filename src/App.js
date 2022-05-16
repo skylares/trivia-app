@@ -4,7 +4,10 @@ import Trivia from "./pages/Trivia";
 
 const App = () => {
 
-  const [triviaScreen, setTriviaScreen] = React.useState(true);
+  const [trivia, setTrivia] = React.useState(true);
+
+  const [apiData, setApiData] = React.useState([]);
+  
   const [formData, setFormData] = React.useState(
     {
       amount: "5",
@@ -13,40 +16,23 @@ const App = () => {
     }
   );
 
+  function apiUrlGenerator() {
+    const {amount, difficulty, category} = formData;
+    let apiUrl = `https://opentdb.com/api.php?amount=${amount}`;
+    if (category.length) apiUrl += `&category=${category}`;
+    if (difficulty.length) apiUrl += `&difficulty=${difficulty}`;
+    return apiUrl + "&type=multiple";
+  }
   
-
   return(
-    <main>
-      {triviaScreen  
-        ? <Start formData={formData} setFormData={setFormData}/> 
-        : <Trivia />
+    <main className={trivia ? "container start" : "container trivia"}>
+      {
+      trivia
+        ? <Start formData={formData} setFormData={setFormData} setTrivia={setTrivia}/> 
+        : <Trivia apiData={apiData} setApiData={setApiData} apiUrl={apiUrlGenerator}/>
       }
     </main>
   );
 }
 
 export default App;   
-
-
-
-// const [trivia, setTrivia] = React.useState([]);
-//
-// React.useEffect(() => {
-//   const triviaApi = async() => {
-//     let result = await fetch("https://opentdb.com/api.php?amount=10");
-//     let data = await result.json();
-//     const mapped = await data.results.map(triv => {
-//       let correctedQuestion = triv.question.replaceAll("&quot;", '"');
-//       let correctedAnswer = triv.correct_answer.replaceAll("&quot;", '"')
-//       return(
-//         <div>
-//           <h1>Question: {correctedQuestion}</h1>
-//           <h1>Answer: {correctedAnswer}</h1>
-//           <br />
-//         </div>
-//       );
-//     });
-//     setTrivia(mapped);
-//   };
-//   triviaApi();
-// }, []);

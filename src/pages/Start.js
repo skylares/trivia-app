@@ -12,13 +12,13 @@ const Start = (props) => {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(amount, category, difficulty);
+    props.setTrivia(prevTrivia => !prevTrivia);
   }
 
   return(
-    <section>
-      <h1>Quizzical</h1>
-      <h3>The best quiz game this side of the Mississppi</h3>
+    <section className="start">
+      <h1 className="start--title">Quizzical</h1>
+      <h3 className="start--description">The best quiz game this side of the Mississppi</h3>
 
       <form onSubmit={handleFormSubmit}>
       <label>
@@ -81,7 +81,7 @@ const Start = (props) => {
           </select>
         </label>
         <br/>
-        <button>Start quiz</button>
+        <button className="start--button">Start quiz</button>
       </form>
 
     </section>
@@ -90,5 +90,3 @@ const Start = (props) => {
 };
 
 export default Start;
-
-// default: https://opentdb.com/api.php?amount=5
