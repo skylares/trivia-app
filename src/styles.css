@@ -99,4 +99,41 @@ label {
 
 .trivia {
   text-align: left;
+  margin: 15px 20px;
+}
+
+.question--answers-container {
+  display: flex;
+  gap: 15px;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.question--answers {
+  border: 1px solid #4D5B9E;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 5px 10px;
+  min-width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+  .question--answers {
+    width: 150px;
+  }
+}
+
+.question--question {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.container.trivia {
+  justify-content: flex-start;
+}
+
+hr {
+  margin: 15px 0; 
+  border: 1px solid #DBDEF0;
 }
