@@ -29,7 +29,7 @@ const App = () => {
       {
       trivia
         ? <Start formData={formData} setFormData={setFormData} setTrivia={setTrivia}/> 
-        : <Trivia apiData={apiData} setApiData={setApiData} apiUrl={apiUrlGenerator}/>
+        : <Trivia apiData={apiData} setApiData={setApiData} apiUrl={apiUrlGenerator} setTrivia={setTrivia}/>
       }
     </main>
   );

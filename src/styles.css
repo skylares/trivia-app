@@ -102,6 +102,15 @@ label {
   margin: 15px 20px;
 }
 
+.container.trivia {
+  justify-content: flex-start;
+}
+
+.question--question {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
 .question--answers-container {
   display: flex;
   gap: 15px;
@@ -116,24 +125,36 @@ label {
   font-weight: 500;
   padding: 5px 10px;
   min-width: 150px;
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .question--answers {
     width: 150px;
   }
 }
 
-.question--question {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
-.container.trivia {
-  justify-content: flex-start;
-}
-
 hr {
   margin: 15px 0; 
   border: 1px solid #DBDEF0;
+}
+
+.question--answers.selected {
+  background-color: #D6DBF5;
+}
+
+.question--answers.correct {
+  background-color: #94D7A2;
+}
+
+.question--answers.wrong {
+  opacity: 0.5;
+}
+
+.wrong.selected {
+  background-color: #F8BCBC;
+}
+
+.question--checked {
+  margin-bottom: 20px;
 }
