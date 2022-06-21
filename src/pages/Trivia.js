@@ -41,6 +41,7 @@ const Trivia = ({apiData, setApiData, apiUrl, setTrivia}) => {
   if (apiData.length) {
     return (
       <section className="trivia">
+        <h1 className="trivia--title">Quizzical</h1>
         <Question apiData={apiData} checkedAnswers={checkedAnswers} />
         <button 
           onClick={checkedAnswers ? playAgain : answerChecker}
